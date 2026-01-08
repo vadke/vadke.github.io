@@ -3,163 +3,382 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinit Vijaykumar Adke | Business Analyst Portfolio</title>
+    <title>Vinit Adke | Data & Strategy Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --bg: #f8f9fa;
-            --text: #333;
+            /* Behance Dark Theme Palette */
+            --bg-color: #0a192f;
+            --card-bg: #112240;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --accent: #64ffda; /* Glowing Teal */
+            --hover-bg: #233554;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text); background-color: var(--bg); margin: 0; padding: 0; }
-        
-        /* Header Section */
-        header { background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); color: white; padding: 80px 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 3em; letter-spacing: 1px; }
-        header .subtitle { font-size: 1.2em; opacity: 0.9; margin-top: 10px; font-weight: 300; }
-        header .social-links { margin-top: 20px; }
-        header .social-links a { color: white; text-decoration: none; margin: 0 15px; border: 1px solid rgba(255,255,255,0.3); padding: 8px 15px; border-radius: 20px; transition: all 0.3s; }
-        header .social-links a:hover { background: white; color: var(--primary); }
 
-        /* Container */
-        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
-        
-        /* Section Styles */
-        section { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; }
-        h2 { color: var(--primary); border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; }
-        
-        /* Project Grid */
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 20px; }
-        .project-card { border: 1px solid #eee; border-radius: 8px; padding: 20px; transition: transform 0.2s; background: #fff; }
-        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--secondary); }
-        .project-card h3 { color: var(--primary); margin-top: 0; font-size: 1.3em; }
-        .project-card p { font-size: 0.95em; color: #666; height: 80px; overflow: hidden; }
-        
-        /* Tags & Buttons */
-        .tags { margin: 15px 0; display: flex; flex-wrap: wrap; gap: 8px; }
-        .tag { background-color: #e1ecf4; color: #2c3e50; padding: 4px 10px; border-radius: 4px; font-size: 0.8em; font-weight: 600; }
-        .btn { display: inline-block; background-color: var(--secondary); color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-size: 0.9em; margin-top: 10px; }
-        .btn:hover { background-color: #2980b9; }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
-        /* Skills Section */
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-badge { background: #f1f2f6; padding: 8px 15px; border-radius: 20px; font-size: 0.9em; border: 1px solid #dfe4ea; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+        }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .resume-btn {
+            border: 1px solid var(--accent);
+            padding: 8px 16px;
+            border-radius: 4px;
+            color: var(--accent) !important;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 150px; /* Wide desktop padding */
+        }
+        .hero h4 { color: var(--accent); font-weight: 400; font-size: 1.1rem; margin-bottom: 20px; }
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: #e6f1ff;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+        .hero h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        .hero p {
+            max-width: 540px;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 50px;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .cta-btn:hover { background: rgba(100, 255, 218, 0.1); transform: translateY(-3px); }
+
+        /* --- Section Styling --- */
+        section { padding: 100px 150px; }
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #e6f1ff;
+            margin-bottom: 40px;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 300px;
+            height: 1px;
+            background: #233554;
+            margin-left: 20px;
+        }
+        .section-title span { color: var(--accent); margin-right: 10px; font-family: 'Playfair Display', serif; }
+
+        /* --- About Grid --- */
+        .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 50px; }
+        .about-text p { margin-bottom: 15px; color: var(--text-secondary); }
+        .tech-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .tech-list li {
+            list-style: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .tech-list li::before {
+            content: "▹";
+            color: var(--accent);
+            margin-right: 10px;
+        }
+
+        /* --- Projects Grid --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .project-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            top: 0;
+            border: 1px solid transparent;
+        }
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent);
+        }
+        .folder-icon { color: var(--accent); font-size: 2.5rem; margin-bottom: 20px; display: block; }
+        .project-card h3 {
+            color: #e6f1ff;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .project-card h3 a { color: inherit; text-decoration: none; }
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.8rem;
+            font-family: monospace;
+            color: var(--text-secondary);
+            margin-top: auto;
+        }
+        .links { position: absolute; top: 25px; right: 25px; }
+        .links a { color: var(--text-primary); font-size: 1.2rem; transition: color 0.2s; }
+        .links a:hover { color: var(--accent); }
+
+        /* --- Footer --- */
+        footer { text-align: center; padding: 20px; color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 20px; }
+
+        /* --- Responsive --- */
+        @media (max-width: 1080px) {
+            .hero { padding: 0 100px; }
+            section { padding: 80px 100px; }
+        }
+        @media (max-width: 768px) {
+            .hero { padding: 0 50px; }
+            section { padding: 60px 40px; }
+            .hero h1 { font-size: 3rem; }
+            .hero h2 { font-size: 2rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            nav { padding: 20px; }
+            .nav-links { display: none; } /* Simplified for mobile */
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Vinit Vijaykumar Adke</h1>
-        <div class="subtitle">MS Business Analytics (ASU) | Supply Chain Strategist | Data Storyteller</div>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/vinit-adke" target="_blank">LinkedIn</a>
-            <a href="https://github.com/vadke" target="_blank">GitHub</a>
-            <a href="mailto:vadke@asu.edu">Email Me</a>
+    <nav>
+        <div class="logo">V.</div>
+        <div class="nav-links">
+            <a href="#about"><span style="color:var(--accent)">01.</span> About</a>
+            <a href="#projects"><span style="color:var(--accent)">02.</span> Work</a>
+            <a href="#contact"><span style="color:var(--accent)">03.</span> Contact</a>
+            <a href="#" class="resume-btn">Resume</a>
         </div>
-    </header>
+    </nav>
 
-    <div class="container">
-        
-        <section>
-            <h2>👋 About Me</h2>
-            <p>
-                I am a Business Analytics graduate from <strong>Arizona State University</strong> with 5+ years of experience bridging the gap between technical data and strategic decision-making. 
-                I specialize in <strong>Supply Chain Optimization</strong>, <strong>Predictive Modeling</strong>, and <strong>Process Improvement</strong>.
-            </p>
-            <p>
-                Previously managed $12M+ portfolios as a Sales Engineer. Skilled in Python, SQL, Tableau, and Gurobi.
-            </p>
-        </section>
-
-        <section>
-            <h2>🏆 Featured Projects</h2>
-            <div class="project-grid">
-
-                <div class="project-card">
-                    <h3>Solar Panel Fault Detection</h3>
-                    <p>Automated defect inspection using VGG16 Deep Learning to detect dust, cracks, and damage in renewable energy assets.</p>
-                    <div class="tags">
-                        <span class="tag">Computer Vision</span>
-                        <span class="tag">TensorFlow</span>
-                        <span class="tag">Deep Learning</span>
-                    </div>
-                    <a href="https://github.com/vadke/Solar-Panel-Fault-Detection-CV" class="btn">View Code</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Network Optimization (Gurobi)</h3>
-                    <p>Designed an optimal campus charging network using Mixed-Integer Linear Programming (MILP), saving 19% of the budget.</p>
-                    <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Gurobi</span>
-                        <span class="tag">Supply Chain</span>
-                    </div>
-                    <a href="https://github.com/vadke/E-Scoot-Network-Optimization-Gurobi" class="btn">View Code</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Grip Lab AI: "Recovery 2.0"</h3>
-                    <p>Proprietary algorithm integrating Grip Strength into Oura/Whoop scores to detect CNS fatigue in athletes.</p>
-                    <div class="tags">
-                        <span class="tag">XGBoost</span>
-                        <span class="tag">Product Strategy</span>
-                        <span class="tag">Wearables</span>
-                    </div>
-                    <a href="https://github.com/vadke/Grip-Lab-Wearable-AI" class="btn">View Code</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Yelp Fake Review Detection</h3>
-                    <p>Fraud detection engine using Sentiment Analysis & Isolation Forests to flag suspicious reviews with 99% accuracy.</p>
-                    <div class="tags">
-                        <span class="tag">NLP</span>
-                        <span class="tag">VADER</span>
-                        <span class="tag">Anomaly Detection</span>
-                    </div>
-                    <a href="https://github.com/vadke/Yelp-Fake-Review-Detection-NLP" class="btn">View Code</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Lean Six Sigma: Cycle Time</h3>
-                    <p>Reduced proposal cycle time by 15% for a $60B tech firm using DMAIC framework and Process Mapping.</p>
-                    <div class="tags">
-                        <span class="tag">Tableau</span>
-                        <span class="tag">Minitab</span>
-                        <span class="tag">DMAIC</span>
-                    </div>
-                    <a href="https://github.com/vadke/Lean-Six-Sigma-Cycle-Time-Reduction" class="btn">View Code</a>
-                </div>
-
-                <div class="project-card">
-                    <h3>Strategic Risk Analysis</h3>
-                    <p>Modeled a $100M+ investment decision using Monte Carlo Simulation and Bayesian Inference to maximize NPV.</p>
-                    <div class="tags">
-                        <span class="tag">Excel</span>
-                        <span class="tag">@RISK</span>
-                        <span class="tag">Monte Carlo</span>
-                    </div>
-                    <a href="https://github.com/vadke/Strategic-Risk-Analysis-Monte-Carlo" class="btn">View Code</a>
-                </div>
-
-            </div>
-        </section>
-
-        <section>
-            <h2>🛠 Technical Skills</h2>
-            <div class="skills-grid">
-                <span class="skill-badge">Python (Pandas, Scikit-Learn)</span>
-                <span class="skill-badge">SQL (MySQL, BigQuery)</span>
-                <span class="skill-badge">Tableau & Power BI</span>
-                <span class="skill-badge">Machine Learning (XGBoost, RandomForest)</span>
-                <span class="skill-badge">Operations Research (Gurobi)</span>
-                <span class="skill-badge">Statistical Analysis (Minitab, SPSS)</span>
-                <span class="skill-badge">Deep Learning (TensorFlow/Keras)</span>
-                <span class="skill-badge">Supply Chain Strategy</span>
-            </div>
-        </section>
-
+    <div class="hero">
+        <h4>Hi, my name is</h4>
+        <h1>Vinit Adke.</h1>
+        <h2>I turn messy data into strategy.</h2>
+        <p>
+            I am a <strong>Business Analyst</strong> and <strong>Supply Chain Strategist</strong> specializing in building data-driven solutions that drive revenue and efficiency. Currently leveraging ML & Operations Research to solve complex business problems.
+        </p>
+        <div>
+            <a href="#projects" class="cta-btn">Check out my work</a>
+        </div>
     </div>
+
+    <section id="about">
+        <h2 class="section-title"><span>01.</span> About Me</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Hello! My name is Vinit and I enjoy bridging the gap between technical algorithms and executive strategy. My interest in data started when I managed $12M+ portfolios and realized that Excel wasn't enough to capture the full story.</p>
+                <p>Fast-forward to today, I hold an <strong>MS in Business Analytics</strong> from <strong>Arizona State University</strong> and have built projects ranging from Computer Vision for solar farms to Monte Carlo simulations for investment risk.</p>
+                <p>Here are a few technologies I've been working with recently:</p>
+                <ul class="tech-list">
+                    <li>Python (Pandas, Scikit-Learn)</li>
+                    <li>SQL & BigQuery</li>
+                    <li>Tableau & Power BI</li>
+                    <li>Gurobi Optimization</li>
+                    <li>TensorFlow / Keras</li>
+                    <li>Minitab (Six Sigma)</li>
+                </ul>
+            </div>
+            <div class="about-img">
+                </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title"><span>02.</span> Featured Projects</h2>
+        
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="links">
+                    <a href="https://github.com/vinitadke/Solar-Panel-Fault-Detection-CV"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <i class="fa-regular fa-eye folder-icon"></i>
+                <h3><a href="https://github.com/vinitadke/Solar-Panel-Fault-Detection-CV">Solar Panel Fault Detection</a></h3>
+                <p>Computer Vision system using VGG16 (Transfer Learning) to detect defects like dust and cracks in solar panels from drone imagery.</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>TensorFlow</span>
+                    <span>CNN</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="links">
+                    <a href="https://github.com/vinitadke/E-Scoot-Network-Optimization-Gurobi"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <i class="fa-solid fa-route folder-icon"></i>
+                <h3><a href="https://github.com/vinitadke/E-Scoot-Network-Optimization-Gurobi">E-Scoot Network Opt.</a></h3>
+                <p>Used Gurobi and Mixed-Integer Linear Programming (MILP) to design an optimal charging network for ASU, saving 19% of budget.</p>
+                <div class="project-tech">
+                    <span>Gurobi</span>
+                    <span>Operations Research</span>
+                    <span>Python</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="links">
+                    <a href="https://github.com/vinitadke/Grip-Lab-Wearable-AI"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <i class="fa-solid fa-heart-pulse folder-icon"></i>
+                <h3><a href="https://github.com/vinitadke/Grip-Lab-Wearable-AI">Grip Lab AI (Capstone)</a></h3>
+                <p>Developed a "Recovery 2.0" algorithm for Oura/Whoop that integrates Grip Strength data to detect CNS fatigue in athletes.</p>
+                <div class="project-tech">
+                    <span>XGBoost</span>
+                    <span>Product Strategy</span>
+                    <span>Wearables</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="links">
+                    <a href="https://github.com/vinitadke/Yelp-Fake-Review-Detection-NLP"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <i class="fa-solid fa-magnifying-glass-chart folder-icon"></i>
+                <h3><a href="https://github.com/vinitadke/Yelp-Fake-Review-Detection-NLP">Yelp Fraud Detection</a></h3>
+                <p>NLP Fraud Engine using Sentiment Analysis (VADER) and Isolation Forests to flag suspicious reviews with 99% accuracy.</p>
+                <div class="project-tech">
+                    <span>NLP</span>
+                    <span>Anomaly Detection</span>
+                    <span>Scikit-Learn</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="links">
+                    <a href="https://github.com/vinitadke/Strategic-Risk-Analysis-Monte-Carlo"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <i class="fa-solid fa-dice folder-icon"></i>
+                <h3><a href="https://github.com/vinitadke/Strategic-Risk-Analysis-Monte-Carlo">Strategic Risk Analysis</a></h3>
+                <p>Modeled a $100M+ investment decision using Monte Carlo Simulation (@RISK) and Bayesian Inference to maximize NPV.</p>
+                <div class="project-tech">
+                    <span>Excel</span>
+                    <span>@RISK</span>
+                    <span>Monte Carlo</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="links">
+                    <a href="https://github.com/vinitadke/Lean-Six-Sigma-Cycle-Time-Reduction"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <i class="fa-solid fa-stopwatch folder-icon"></i>
+                <h3><a href="https://github.com/vinitadke/Lean-Six-Sigma-Cycle-Time-Reduction">Lean Six Sigma</a></h3>
+                <p>Reduced proposal cycle time by 15% for a $60B tech firm using the DMAIC framework and Process Mapping.</p>
+                <div class="project-tech">
+                    <span>Tableau</span>
+                    <span>Minitab</span>
+                    <span>DMAIC</span>
+                </div>
+            </div>
+
+             <div class="project-card">
+                <div class="links">
+                    <a href="https://github.com/vinitadke/Used-Car-Price-Prediction"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <i class="fa-solid fa-car folder-icon"></i>
+                <h3><a href="https://github.com/vinitadke/Used-Car-Price-Prediction">Used Car Valuation</a></h3>
+                <p>Polynomial Regression model to predict vehicle resale value, validated by rigorous statistical diagnostics (VIF, Q-Q Plots).</p>
+                <div class="project-tech">
+                    <span>Python</span>
+                    <span>Statsmodels</span>
+                    <span>Regression</span>
+                </div>
+            </div>
+
+             <div class="project-card">
+                <div class="links">
+                    <a href="https://github.com/vinitadke/Diabetes-Prediction-Ensemble-Modeling"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <i class="fa-solid fa-user-doctor folder-icon"></i>
+                <h3><a href="https://github.com/vinitadke/Diabetes-Prediction-Ensemble-Modeling">Diabetes Risk Ensemble</a></h3>
+                <p>Benchmarked 10+ algorithms (Voting, Bagging, XGBoost) to create a robust diagnostic tool with 82% AUC.</p>
+                <div class="project-tech">
+                    <span>Ensemble Learning</span>
+                    <span>Healthcare</span>
+                    <span>Python</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" style="text-align: center; padding-bottom: 150px;">
+        <h4 style="color: var(--accent); margin-bottom: 20px;">03. What's Next?</h4>
+        <h2 style="font-size: 3rem; color: #e6f1ff; margin-bottom: 20px;">Get In Touch</h2>
+        <p style="max-width: 600px; margin: 0 auto 50px auto; color: var(--text-secondary);">
+            I am currently looking for full-time opportunities in Business Analytics and Supply Chain Strategy. Whether you have a question or just want to say hi, my inbox is always open.
+        </p>
+        <a href="mailto:YOUR_EMAIL@example.com" class="cta-btn">Say Hello</a>
+        </section>
+
+    <footer>
+        <p>Designed & Built by Vinit Adke</p>
+    </footer>
 
 </body>
 </html>
