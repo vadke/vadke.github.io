@@ -3,426 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinit Vijaykumar Adke | Data & Strategy Portfolio</title>
+    <title>Vinit Adke | Business Strategy & Analytics</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            /* Premium Dark Theme */
-            --bg-color: #0a192f;        /* Deep Navy */
-            --card-bg: #112240;         /* Lighter Navy */
-            --text-main: #ccd6f6;       /* White-Blue */
-            --text-muted: #8892b0;      /* Grey-Blue */
-            --accent: #64ffda;          /* Teal/Cyan */
-            --accent-glow: rgba(100, 255, 218, 0.1);
+            /* EXECUTIVE LIGHT THEME */
+            --bg-body: #ffffff;
+            --bg-secondary: #f8f9fa; /* Very light grey for sections */
+            --text-primary: #1a1a1a; /* Almost Black */
+            --text-secondary: #555555; /* Dark Grey */
+            --accent-color: #2563eb; /* Professional Royal Blue */
+            --border-color: #e5e5e5;
+            --card-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --card-hover-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
+            background-color: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.7;
         }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: var(--text-primary); }
 
         /* --- Navigation --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
+            padding: 25px 8%;
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(10, 25, 47, 0.95);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            box-shadow: 0 10px 30px -10px rgba(2,12,27,0.7);
+            border-bottom: 1px solid var(--border-color);
         }
-        .logo { 
-            font-family: 'Playfair Display', serif; 
-            font-size: 1.5rem; 
-            color: var(--accent); 
-            font-weight: 700; 
-            border: 2px solid var(--accent);
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-        .nav-links { display: flex; gap: 30px; }
+        .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.5px; }
+        .nav-links { display: flex; gap: 40px; }
         .nav-links a {
-            color: var(--text-main);
+            color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
         }
-        .nav-links a:hover { color: var(--accent); }
-        .nav-links span { color: var(--accent); margin-right: 5px; }
+        .nav-links a:hover { color: var(--accent-color); }
 
-        /* --- Hero Section (Split Layout) --- */
+        /* --- Hero Section --- */
         .hero {
-            min-height: 100vh;
+            min-height: 95vh;
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Pushes text left, image right */
-            padding: 100px 10%;
-            gap: 50px;
+            justify-content: space-between;
+            padding: 120px 8% 50px 8%;
+            background-color: var(--bg-body);
         }
-        .hero-text { max-width: 600px; }
-        .hero-intro { color: var(--accent); font-family: monospace; margin-bottom: 20px; font-size: 1.1rem; }
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 10px;
-            color: #e6f1ff;
-        }
-        .hero h2 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 50px;
-            max-width: 500px;
+        .hero-content { flex: 1; max-width: 600px; }
+        
+        .role-tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: var(--accent-color);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
         }
         
-        /* Profile Image Styling */
-        .hero-img-container {
-            position: relative;
-            width: 350px;
-            height: 350px;
-            flex-shrink: 0;
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 700;
         }
-        .hero-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px; /* Rounded corners */
-            position: relative;
-            z-index: 2;
-            filter: grayscale(100%) contrast(1.1); /* Cool effect */
-            transition: all 0.3s ease;
-            border: 2px solid var(--accent);
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            font-weight: 300;
         }
-        /* The decorative box behind the image */
-        .hero-img-container::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--accent);
-            border-radius: 8px;
-            top: 20px;
-            left: 20px;
-            z-index: 1;
-            transition: all 0.3s ease;
-        }
-        /* Hover Effect */
-        .hero-img-container:hover .hero-img {
-            filter: none; /* Color returns on hover */
-            transform: translate(-5px, -5px);
-        }
-        .hero-img-container:hover::after {
-            transform: translate(5px, 5px);
-        }
-
-        .btn {
+        
+        .hero-btn {
             display: inline-block;
-            padding: 15px 30px;
-            border: 1px solid var(--accent);
-            color: var(--accent);
+            background-color: var(--text-primary);
+            color: white;
+            padding: 16px 36px;
             text-decoration: none;
             border-radius: 4px;
-            font-size: 1rem;
+            font-weight: 500;
             transition: all 0.3s;
         }
-        .btn:hover { background: var(--accent-glow); transform: translateY(-3px); }
+        .hero-btn:hover { background-color: var(--accent-color); transform: translateY(-2px); }
 
-        /* --- Section Styling --- */
-        section { padding: 100px 10%; max-width: 1400px; margin: 0 auto; }
-        .section-header { display: flex; align-items: center; margin-bottom: 40px; }
-        .section-header h3 { font-size: 2rem; color: #e6f1ff; margin-right: 20px; }
-        .section-header .line { height: 1px; background: #233554; flex-grow: 1; max-width: 300px; }
-        .section-header span { color: var(--accent); font-family: monospace; font-size: 1.5rem; margin-right: 10px; }
+        /* Profile Image */
+        .hero-image-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+        }
+        .profile-img {
+            width: 400px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 20px 20px 0px var(--bg-secondary); /* Offset decoration */
+            filter: grayscale(100%); /* Elegant Black & White */
+            transition: all 0.5s ease;
+        }
+        .profile-img:hover {
+            filter: grayscale(0%); /* Color on hover */
+            transform: scale(1.01);
+        }
+
+        /* --- About Section --- */
+        .section { padding: 100px 8%; }
+        .bg-grey { background-color: var(--bg-secondary); }
+        
+        .section-title { font-size: 2.5rem; margin-bottom: 50px; position: relative; display: inline-block; }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent-color);
+            margin-top: 15px;
+        }
+
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+        .about-text p { margin-bottom: 20px; font-size: 1.05rem; color: var(--text-secondary); }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        .skill-pill {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
 
         /* --- Projects Grid --- */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 40px;
         }
+        
         .project-card {
-            background-color: var(--card-bg);
-            padding: 25px;
-            border-radius: 5px;
-            transition: transform 0.3s ease;
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 35px;
+            transition: all 0.3s ease;
             position: relative;
-            box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+            display: flex;
+            flex-direction: column;
         }
-        .project-card:hover { transform: translateY(-7px); }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-hover-shadow);
+            border-color: transparent;
+        }
         
-        .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
-        .folder { color: var(--accent); font-size: 2.5rem; }
-        .github-link { color: var(--text-main); font-size: 1.2rem; }
-        .github-link:hover { color: var(--accent); }
-
-        .project-card h4 { font-size: 1.4rem; color: #e6f1ff; margin-bottom: 10px; }
-        .project-card h4 a { text-decoration: none; color: inherit; }
-        .project-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px; }
+        .card-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
         
-        .tech-stack { display: flex; gap: 15px; font-family: monospace; font-size: 0.8rem; color: var(--text-muted); flex-wrap: wrap; }
+        .project-card h3 { font-size: 1.5rem; margin-bottom: 15px; font-family: 'Inter', sans-serif; font-weight: 700; }
+        .project-card h3 a { color: inherit; text-decoration: none; }
+        .project-card p { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
+        
+        .project-tags {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
 
-        /* --- About & Skills --- */
-        .about-content { display: grid; grid-template-columns: 2fr 1fr; gap: 50px; }
-        .skills-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
-        .skills-list li { list-style: none; font-family: monospace; font-size: 0.9rem; }
-        .skills-list li::before { content: "▹"; color: var(--accent); margin-right: 10px; }
-
-        /* --- Contact --- */
-        .contact-section { text-align: center; max-width: 600px; margin: 0 auto; padding-bottom: 100px; }
-        .contact-number { 
-            font-size: 1.5rem; 
-            color: var(--text-main); 
-            margin: 20px 0; 
-            display: block; 
+        /* --- Contact Section --- */
+        .contact-box {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 80px 0;
+        }
+        .contact-number {
+            font-size: 1.8rem;
             font-weight: 700;
+            margin: 30px 0;
+            font-family: 'Playfair Display', serif;
+            color: var(--text-primary);
         }
 
         /* --- Footer --- */
-        footer { text-align: center; padding: 20px; font-family: monospace; font-size: 0.8rem; color: var(--text-muted); }
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .social-links { margin-bottom: 20px; }
+        .social-links a {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .social-links a:hover { color: var(--accent-color); }
 
-        /* --- Responsive --- */
+        /* Mobile Responsive */
         @media (max-width: 900px) {
-            .hero { flex-direction: column-reverse; text-align: center; justify-content: center; }
-            .hero-img-container { width: 250px; height: 250px; margin-bottom: 30px; }
-            .hero h1 { font-size: 3rem; }
-            .hero h2 { font-size: 2rem; }
-            .about-content { grid-template-columns: 1fr; }
+            .hero { flex-direction: column-reverse; padding-top: 100px; text-align: center; }
+            .hero-image-wrapper { justify-content: center; margin-bottom: 40px; width: 100%; }
+            .profile-img { width: 300px; height: 350px; }
+            .hero h1 { font-size: 2.8rem; }
+            .about-grid { grid-template-columns: 1fr; }
             .nav-links { display: none; }
         }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="logo">V.</div>
-        <div class="nav-links">
-            <a href="#about"><span>01.</span> About</a>
-            <a href="#projects"><span>02.</span> Projects</a>
-            <a href="#contact"><span>03.</span> Contact</a>
-        </div>
-    </nav>
-
-    <div class="hero">
-        <div class="hero-text">
-            <p class="hero-intro">Hi, my name is</p>
-            <h1>Vinit Vijaykumar Adke.</h1>
-            <h2>I turn messy data into strategy.</h2>
-            <p>
-                I am a <strong>Business Analyst</strong> and <strong>Supply Chain Strategist</strong>. 
-                I specialize in building data-driven solutions using Machine Learning, Operations Research, and Six Sigma to drive revenue and efficiency.
-            </p>
-            <a href="#projects" class="btn">Check out my work</a>
-        </div>
-        
-        <div class="hero-img-container">
-            <img src="profile.png" alt="Vinit Adke" class="hero-img">
-        </div>
-    </div>
-
-    <section id="about">
-        <div class="section-header">
-            <h3><span>01.</span> About Me</h3>
-            <div class="line"></div>
-        </div>
-        <div class="about-content">
-            <div>
-                <p>Hello! I enjoy bridging the gap between technical algorithms and executive strategy. My interest in data started when I managed <strong>$12M+ portfolios</strong> as a Sales Engineer and realized that Excel wasn't enough to capture the full story.</p>
-                <p>Fast-forward to today, I hold an <strong>MS in Business Analytics</strong> from <strong>Arizona State University</strong> and have built projects ranging from Computer Vision for solar farms to Monte Carlo simulations for investment risk.</p>
-                <p>Here are a few technologies I've been working with recently:</p>
-                <ul class="skills-list">
-                    <li>Python (Pandas, Scikit-Learn)</li>
-                    <li>Gurobi Optimization</li>
-                    <li>TensorFlow / Keras</li>
-                    <li>SQL & BigQuery</li>
-                    <li>Tableau & Power BI</li>
-                    <li>Minitab (Six Sigma)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="section-header">
-            <h3><span>02.</span> Featured Projects</h3>
-            <div class="line"></div>
-        </div>
-        
-        <div class="project-grid">
-
-            <div class="project-card">
-                <div class="card-top">
-                    <i class="fa-regular fa-folder-open folder"></i>
-                    <a href="https://github.com/vadke/Solar-Panel-Fault-Detection-CV" class="github-link"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <h4><a href="https://github.com/vadke/Solar-Panel-Fault-Detection-CV">Solar Panel Fault Detection</a></h4>
-                <p>Computer Vision system using VGG16 (Transfer Learning) to detect defects like dust, cracks, and bird drops in solar panels.</p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>TensorFlow</span>
-                    <span>CV</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-top">
-                    <i class="fa-regular fa-folder-open folder"></i>
-                    <a href="https://github.com/vadke/E-Scoot-Network-Optimization-Gurobi" class="github-link"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <h4><a href="https://github.com/vadke/E-Scoot-Network-Optimization-Gurobi">E-Scoot Network Opt.</a></h4>
-                <p>Used Gurobi and Mixed-Integer Linear Programming (MILP) to design an optimal charging network for ASU, saving 19% of budget.</p>
-                <div class="tech-stack">
-                    <span>Gurobi</span>
-                    <span>Operations Research</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-top">
-                    <i class="fa-regular fa-folder-open folder"></i>
-                    <a href="https://github.com/vadke/Grip-Lab-Wearable-AI" class="github-link"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <h4><a href="https://github.com/vadke/Grip-Lab-Wearable-AI">Grip Lab AI (Capstone)</a></h4>
-                <p>Developed a "Recovery 2.0" algorithm for Oura/Whoop that integrates Grip Strength data to detect CNS fatigue in athletes.</p>
-                <div class="tech-stack">
-                    <span>XGBoost</span>
-                    <span>Product Strategy</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-top">
-                    <i class="fa-regular fa-folder-open folder"></i>
-                    <a href="https://github.com/vadke/Yelp-Fake-Review-Detection-NLP" class="github-link"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <h4><a href="https://github.com/vadke/Yelp-Fake-Review-Detection-NLP">Yelp Fraud Detection</a></h4>
-                <p>NLP Fraud Engine using Sentiment Analysis (VADER) and Isolation Forests to flag suspicious reviews with 99% accuracy.</p>
-                <div class="tech-stack">
-                    <span>NLP</span>
-                    <span>Anomaly Detection</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-top">
-                    <i class="fa-regular fa-folder-open folder"></i>
-                    <a href="https://github.com/vadke/Strategic-Risk-Analysis-Monte-Carlo" class="github-link"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <h4><a href="https://github.com/vadke/Strategic-Risk-Analysis-Monte-Carlo">Strategic Risk Analysis</a></h4>
-                <p>Modeled a $100M+ investment decision using Monte Carlo Simulation (@RISK) and Bayesian Inference to maximize NPV.</p>
-                <div class="tech-stack">
-                    <span>Excel</span>
-                    <span>@RISK</span>
-                    <span>Monte Carlo</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-top">
-                    <i class="fa-regular fa-folder-open folder"></i>
-                    <a href="https://github.com/vadke/Lean-Six-Sigma-Cycle-Time-Reduction" class="github-link"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <h4><a href="https://github.com/vadke/Lean-Six-Sigma-Cycle-Time-Reduction">Lean Six Sigma</a></h4>
-                <p>Reduced proposal cycle time by 15% for a $60B tech firm using the DMAIC framework and Process Mapping.</p>
-                <div class="tech-stack">
-                    <span>Tableau</span>
-                    <span>Minitab</span>
-                    <span>DMAIC</span>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <div class="card-top">
-                    <i class="fa-regular fa-folder-open folder"></i>
-                    <a href="https://github.com/vadke/Used-Car-Price-Prediction" class="github-link"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <h4><a href="https://github.com/vadke/Used-Car-Price-Prediction">Used Car Valuation</a></h4>
-                <p>Polynomial Regression model to predict vehicle resale value, validated by rigorous statistical diagnostics.</p>
-                <div class="tech-stack">
-                    <span>Statsmodels</span>
-                    <span>Regression</span>
-                </div>
-            </div>
-
-             <div class="project-card">
-                <div class="card-top">
-                    <i class="fa-regular fa-folder-open folder"></i>
-                    <a href="https://github.com/vadke/Diabetes-Prediction-Ensemble-Modeling" class="github-link"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <h4><a href="https://github.com/vadke/Diabetes-Prediction-Ensemble-Modeling">Diabetes Ensemble</a></h4>
-                <p>Benchmarked 10+ algorithms (Voting, Bagging, XGBoost) to create a robust diagnostic tool with 82% AUC.</p>
-                <div class="tech-stack">
-                    <span>Ensemble Learning</span>
-                    <span>Healthcare</span>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="card-top">
-                    <i class="fa-regular fa-folder-open folder"></i>
-                    <a href="https://github.com/vadke/Product-Design-Optimization-DOE" class="github-link"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <h4><a href="https://github.com/vadke/Product-Design-Optimization-DOE">Product Design DOE</a></h4>
-                <p>Optimizing product performance vs. cost using Design of Experiments (DOE) and Factorial Design.</p>
-                <div class="tech-stack">
-                    <span>Minitab</span>
-                    <span>ANOVA</span>
-                </div>
-            </div>
-
-             <div class="project-card">
-                <div class="card-top">
-                    <i class="fa-regular fa-folder-open folder"></i>
-                    <a href="https://github.com/vadke/Obesity-Risk-Classification" class="github-link"><i class="fa-brands fa-github"></i></a>
-                </div>
-                <h4><a href="https://github.com/vadke/Obesity-Risk-Classification">Obesity Risk Model</a></h4>
-                <p>Multi-class classification model predicting obesity risk based on lifestyle factors using SMOTE and Random Forest.</p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>Random Forest</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="section-header" style="justify-content: center;">
-            <h3><span>03.</span> What's Next?</h3>
-        </div>
-        <h2 style="font-size: 3rem; color: #e6f1ff; margin-bottom: 20px;">Get In Touch</h2>
-        <p style="color: var(--text-muted); margin-bottom: 30px;">
-            I am currently looking for full-time opportunities in Business Analytics and Supply Chain Strategy.
-        </p>
-        
-        <a href="mailto:vadke@asu.edu" class="btn">Say Hello</a>
-        
-        <div class="contact-number">
-            <i class="fa-solid fa-phone" style="font-size: 0.8em; margin-right: 10px; color: var(--accent);"></i>
-            +1 (623) 290-4889 
-        </div>
-
-    </section>
-
-    <footer>
-        <p>Designed & Built by Vinit Vijaykumar Adke</p>
-    </footer>
-
-</body>
-</html>
